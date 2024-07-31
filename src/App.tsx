@@ -6,6 +6,8 @@ import Search from "./components/Search/Search";
 import { CompanySearch } from "./company";
 import { searchCompanies } from "./api";
 import PortfolioList from "./components/Portfolio/PortfolioList/PortfolioList";
+import Navbar from "./components/Navbar/Navbar";
+import Hero from "./components/Hero/Hero";
 
 function App() {
   const [search, setSearch] = useState<string>("");
@@ -15,6 +17,7 @@ function App() {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onPortfolioCreate = (e: any) => {
     e.preventDefault();
     const exists = portfolioValues.find((value) => value === e.target[0].value);
@@ -22,6 +25,7 @@ function App() {
     const updatedPortfolio = [...portfolioValues, e.target[0].value];
     setPortfolioValues(updatedPortfolio);
   };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onPortfolioDelete = (e: any) => {
     e.preventDefault();
     const removed = portfolioValues.filter((value)=>{
@@ -29,6 +33,7 @@ function App() {
     });
     setPortfolioValues(removed);
   };
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onClick = async (e: SyntheticEvent) => {
     const result = await searchCompanies(search);
     if (typeof result == "string") {
@@ -41,6 +46,8 @@ function App() {
 
   return (
     <>
+      <Navbar/>
+      <Hero/>
       <Search onClick={onClick} search={search} handleChange={handleChange} />
       {serverError && <h1>{serverError}</h1>}
       <CardList
