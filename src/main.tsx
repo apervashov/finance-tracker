@@ -3,10 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css'; // Ensure this import is present
+import { RouterProvider } from 'react-router-dom';
+import { router } from './Routes/Routes';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
