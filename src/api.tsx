@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CompanySearch } from "./company";
+import { CompanyProfile, CompanySearch } from "./company";
 
 interface SearchResponse{
     data: CompanySearch[];
@@ -16,7 +16,29 @@ interface SearchResponse{
             return error.message;
           } else {
             console.log("unexpected error: ", error);
-            return "An expected error has occured.";
+             return "An expected error has occured.";
           }
         }
       };
+
+      export const getCompanyProfile = async(query: string) => {
+        try{
+          const data = await axios.get<CompanyProfile[]>(
+            `https://financialmodelingprep.com/api/v3/profile/${query}?apikey=PofiOsVr1Q63MEDnzoOJqDJIgQd8pucI`
+          );
+          return data;
+        }catch(error:any){
+          console.log("error from an API: ", error.message);
+        }
+        };
+        export const getKeyMetrics = async(query: string) => {
+          try{
+            const data = await axios.get<CompanyProfile[]>(
+              `https://financialmodelingprep.com/api/v3/key-metrics-ttm/${query}?apikey=PofiOsVr1Q63MEDnzoOJqDJIgQd8pucI`
+            );
+            return data;
+          }catch(error:any){
+            console.log("error message: ", error.message);
+          }
+          };
+      
