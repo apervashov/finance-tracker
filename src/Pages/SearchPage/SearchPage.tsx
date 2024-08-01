@@ -9,7 +9,7 @@ import PortfolioList from "../../components/Portfolio/PortfolioList/PortfolioLis
 
 interface Props{}
 const SearchPage = (props:Props) => {
-    const [search, setSearch] = useState<string>("");
+  const [search, setSearch] = useState<string>("");
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [serverError, setServerError] = useState<string | null>(null);
   const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
