@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CompanyIncomeStatement, CompanyProfile, CompanySearch } from "./company";
+import { CompanyBalanceSheet, CompanyCashFlow, CompanyIncomeStatement, CompanyProfile, CompanySearch } from "./company";
 
 interface SearchResponse {
   data: CompanySearch[];
@@ -45,6 +45,26 @@ export const getIncomeStatement = async (query: string) => {
   try {
     const data = await axios.get<CompanyIncomeStatement[]>(
       `https://financialmodelingprep.com/api/v3/income-statement/${query}?limit=40&apikey=PofiOsVr1Q63MEDnzoOJqDJIgQd8pucI`
+    );
+    return data;
+  } catch (error: any) {
+    console.log("error message: ", error.message);
+  }
+};
+export const getBalanceSheet = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyBalanceSheet[]>(
+      `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${query}?limit=40&apikey=PofiOsVr1Q63MEDnzoOJqDJIgQd8pucI`
+    );
+    return data;
+  } catch (error: any) {
+    console.log("error message: ", error.message);
+  }
+};
+export const getCashFlow = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyCashFlow[]>(
+      `https://financialmodelingprep.com/api/v3/cash-flow-statement/${query}?limit=100&apikey=PofiOsVr1Q63MEDnzoOJqDJIgQd8pucI`
     );
     return data;
   } catch (error: any) {
