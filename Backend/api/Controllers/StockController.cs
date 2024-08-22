@@ -34,8 +34,8 @@ namespace api.Controllers
                 return BadRequest(ModelState);
             }
             var stocks = await _stockRepository.GetAllAsync(query);
-            var stockDTO = stocks.Select(s => s.ToStockDTO());
-            return Ok(stocks);
+            var stockDTO = stocks.Select(s => s.ToStockDTO()).ToList();
+            return Ok(stockDTO);
         }
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById([FromRoute] int id)

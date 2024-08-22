@@ -1,6 +1,6 @@
 import React from "react";
 import RatioList from "../../components/RatioList/RatioList";
-import { TestDataCompany } from "../../components/Table/TestData";
+import { TestDataCompany, testIncomeStatementData } from "../../components/Table/TestData";
 import Table from "../../components/Table/Table";
 
 type Props = {};
@@ -18,13 +18,14 @@ const DesignGuide = (props: Props) => {
   return (
     <>
       <h1>
-       These are reuable components of the app with brief instructions on how to use them.
+        Design guide- This is the design guide for Fin Shark. These are reuable
+        components of the app with brief instructions on how to use them.
       </h1>
       <RatioList config={tableConfig} data={data} />
-      <Table />
+      <Table data={testIncomeStatementData} config={tableConfig}/>
       <h3>
         Table - Table takes in a configuration object and company data as
-        params. Using the config to style your table.
+        params. Use the config to style your table.
       </h3>
     </>
   );

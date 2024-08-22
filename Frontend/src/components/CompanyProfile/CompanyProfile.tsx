@@ -1,8 +1,10 @@
 import { useOutletContext } from "react-router";
 import {CompanyKeyMetrics} from "../../company";
 import { useEffect, useState } from "react";
-import { getCompanyProfile, getKeyMetrics } from "../../api";
+
 import RatioList from "../RatioList/RatioList";
+import StockComment from "../StockComment/StockComment";
+import { getKeyMetrics } from "../../api";
 interface Props {
   }
   const tableConfig = [
@@ -46,6 +48,7 @@ interface Props {
     {companyData ? (
       <>
       <RatioList data={companyData} config={tableConfig}/>
+      <StockComment stockSymbol={ticker}/>
       </>
       ) : (
         <>Loading...</>
