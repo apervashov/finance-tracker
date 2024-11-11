@@ -1,6 +1,6 @@
 # Portfolio Project
 
-This is a full-stack portfolio project built using TypeScript, React, Bootstrap, Toastify for the frontend, and .NET Core with Entity Framework and JWT authentication for the backend.
+This is a full-stack portfolio project built using TypeScript, React, Tailwind, Toastify for the frontend, and .NET Core with Entity Framework and JWT authentication for the backend.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ This is a full-stack portfolio project built using TypeScript, React, Bootstrap,
 
 ## Features
 
-- **Responsive Design:** Built with Bootstrap to ensure compatibility across devices.
+- **Responsive Design:** Built with Tailwind to ensure compatibility across devices.
 - **Authentication:** JWT-based authentication system.
 - **TypeScript:** Ensures type safety in both frontend and backend.
 - **Entity Framework:** ORM for database interactions.
@@ -26,7 +26,7 @@ This is a full-stack portfolio project built using TypeScript, React, Bootstrap,
 ### Frontend
 - **TypeScript**
 - **React**
-- **Bootstrap**
+- **Tailwind**
 - **Toastify**
 
 ### Backend
